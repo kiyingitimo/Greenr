@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greener - Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+	<meta name="google-site-verification" content="PjoRH1pCMWXG9K7ICFFsdLAPRGtnj4lOk-Cc2oC5WBo" />
+</head>
+<body>
+	<div id="header" class="container">
+		<div class="row">
+			<div class="col-lg-6">
+
+				<h1 class="logo"><img src="{{ url_for('static', filename='images/logo.png') }}" height="100px">Greener</h1>
+			</div>
+			<div class="col-lg-6">
+				<a href="/login"><button class="btn btn-outline-success">Login</button></a>
+				<a href="/signup"><button class="btn btn-outline-success">Sign up</button></a>
+			</div>
+		</div>
+	</div>
+	<hr style="color:darkgreen;height: 2.8px;margin: 0;">
+
+	<div id="main">
+		<center>
+			<h1 id="logotext">Greener</h1>
+			<p>"A Campaign to control and eradicate Climate Change."</p><br>
+			<a href="/signup"><button class="btn btn-success">Register Now</button></a>
+		</center>
+	</div>
+	<div id="cnt" class="container">
+		<h1>Why Greener ?</h1>
+		<p class="style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; According to Global Climate Change Organization (G.C.C.O), over 315,000
+		people die annually due to drastic climate changes globally. The drastic climate changes are majorly attributed to the
+		activities of man e.g. deforestation, dumping of industrial wates, emission of toxic fumes into the atmosphere, among others.
+		The negative climate changes have not only  affected humans but animals too i.e, some animal species have almost gone extinct, many
+		have lost their habitats and many others are prone to diseases which wasn't the case until now. And that is why we need you to join
+		the campaign to help us combat the negativity of climate change through this platform "Greener". So, register now in order to share
+		you on how some of these plagues can be solved to save our future. Remember to keep our planet 'Greener'.</p>
+	</div>
+	<footer>
+		<h5>Copyright &copy; 2022 Greener Gents </h5>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+        if ($.cookie("email") != undefined) {
+            window.location = "/feed"
+        }
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

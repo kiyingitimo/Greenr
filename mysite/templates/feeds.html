@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greener - Newsfeed</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/feeds.css') }}">
+</head>
+<body>
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1 id="logo_txt"><img src="{{ url_for('static', filename='images/logo.png') }}" height="50px">Greener</h1>
+				</div>
+				<div class="col-lg-6">
+					<button class="right btn btn-outline-light" id="qbt">Search</button>
+					<input type="text" class="right form-control" id="q">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div id="menu-screen">-->
+	<!--	<center id="buttons">-->
+	<!--		<button class="btn btn-success" id="post">Post</button>-->
+	<!--		<button class="btn btn-success" id="croom">Create Room</button>-->
+	<!--		<button class="btn btn-success">Show All Rooms</button>-->
+	<!--		<button class="btn btn-success">View Your Rooms</button>-->
+	<!--		<div id="groups">-->
+	<!--			<button class="btn btn-outline-success"><img src="{{ url_for('static', filename='images/logo.png') }}" height="40px"><br> Bush Fire Society<br><font color="gray">999+ Messages</font></button>-->
+	<!--			<button class="btn btn-outline-success"><img src="{{ url_for('static', filename='images/logo.png') }}" height="40px"><br> Jinja Related Climate<br><font color="gray">999+ Messages</font></button>-->
+	<!--			<button class="btn btn-outline-success"><img src="{{ url_for('static', filename='images/logo.png') }}" height="40px"><br> Greener Gents - Official Room<br><font color="gray">250 Messages</font></button>-->
+	<!--		</div>-->
+	<!--	</center>-->
+	<!--</div>-->
+	<div id="profile">
+		<center>
+			<img id="profile-pic" src="{{ url_for('static', filename='dump/avatar.png') }}">
+			<h3><b id="name">Okoed Ray</b></h3>
+
+			<h6>Since:<font color="darkgreen" id="estdate"> 24th September, 2022 </font></h6>
+			<h6 id="followers">0 followers</h6>
+			<h6 id="following">0 following</h6>
+			<button class="btn btn-success" id="post">Post</button><br>
+			<button class="btn btn-info" id="logout">Logout</button>
+		</center>
+	</div>
+	<!--<div class="room-s">-->
+	<!--	<img src="{{ url_for('static', filename='images/wallpaper.jpg') }}" class="cover">-->
+	<!--	<div class="room-s-bts">-->
+	<!--		<img src="{{ url_for('static', filename='dump/avatar.png') }}" class="room-s-pic">-->
+	<!--		<h5>Bush Fire Society</h5>-->
+	<!--		<button class="btn btn-primary" id="spost">Post</button>-->
+	<!--		<button class="btn btn-info" >Join</button>-->
+	<!--		<button class="btn btn-warning">Like</button>-->
+	<!--	</div>-->
+	<!--</div>-->
+	<div class="loadingio-spinner-ball-3azh9u0yuyo post" id="loading">
+	    <div class="ldio-26crhbayvvm">
+            <center><div></div></center>
+        </div>
+    </div>
+	<div class="post" id="post_template">
+		<div class="post-header">
+			<img src="{{ url_for('static', filename='dump/avatar.png') }}" class="room-s-pic">
+			<h5 class="name">Username <font color="green">@ Bush Fire Society</font><br><h6 style="padding: 0;" class="birthdate">3:09am on 3rd July,2022</h6></h5>
+		</div>
+		<div class="post-cnt">
+			<p>Content</p>
+		</div>
+		<div class="post-bts">
+			<button class="btn btn-outline-primary save"><img src="{{ url_for('static',filename='images/download icon.png')}}" height="20px"><br>Save</button>
+			<button class="btn btn-outline-success comment"><img src="{{ url_for('static',filename='images/comment icon.png')}}" height="20px"><br>View Comments</button>
+			<button class="btn btn-outline-info like"><img src="{{ url_for('static',filename='images/like icon.png')}}" height="20px"><br>Like</button>
+		</div>
+	</div>
+
+	<!-- Trigger/Open The Modal -->
+    <!--<button id="post">Post</button>-->
+
+    <!-- The Modal -->
+    <div id="postModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span id="post_close" class="close">&times;</span><br>
+        <h2>Post</h2><br>
+        <textarea class="form-control" rows="5" id="post_text" placeholder=" Type Here"></textarea><br>
+        <button id="submit_post" class="btn btn-success">Post</button>
+      </div>
+
+    </div>
+    <div id="commentModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span id="comment_close" class="close">&times;</span><br>
+        <h2>Comment</h2><br>
+        <div style="height:200px;overflow-y:scroll;margin-bottom:20px;border:solid 1px black;" id="comments">
+
+        </div>
+        <textarea class="form-control" rows="5" id="comment_text" placeholder=" Type Here"></textarea><br>
+        <button id="submit_comment" class="btn btn-info">Comment</button>
+      </div>
+
+    </div>
+    <div id="avatarModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span id="avatar_close" class="close">&times;</span><br>
+        <h2>Choose your Avatar</h2><br>
+
+        <button id="submit_comment" class="btn btn-info">Comment</button>
+      </div>
+
+    </div>
+    <!--<div id="spostModal" class="modal">-->
+
+      <!-- Modal content -->
+    <!--  <div class="modal-content">-->
+    <!--    <span id="spost_close" class="close">&times;</span><br>-->
+    <!--    <h2>Post in Room</h2><br>-->
+    <!--    <textarea class="form-control" rows="5" id="spost_text" placeholder=" Type Here"></textarea><br>-->
+    <!--    <button id="submit_spost" class="btn btn-success">Post</button>-->
+    <!--  </div>-->
+
+    <!--</div>-->
+    <!--<div id="croomModal" class="modal">-->
+
+      <!-- Modal content -->
+    <!--  <div class="modal-content">-->
+    <!--    <span id="croom_close" class="close">&times;</span><br>-->
+    <!--    <h2>Create Room</h2><br>-->
+    <!--    <input type="text" class="form-control" placeholder=" Room Name"><br>-->
+    <!--    <button id="submit_croom" class="btn btn-success">Create</button>-->
+    <!--  </div>-->
+
+    <!--</div>-->
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="{{ url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/feeds.js')}}"></script>
+</body>
+</html>

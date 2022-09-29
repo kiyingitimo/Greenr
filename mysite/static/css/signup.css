@@ -1,0 +1,27 @@
+body{
+	/*background: linear-gradient(#42FCDB,#3EE577);*/
+	background-image:linear-gradient(#C2F70F7f,#C2F70F0f);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+	margin: 0;
+}
+#logo{
+	display: block;
+	padding-top: 100px;
+	height: 300px;
+}
+h1{
+	font-family: SquishyBlue;
+	font-size: 80px;
+	color:darkgreen;
+}
+input[type="text"],input[type="password"]{
+	width:450px;
+	margin:30px;
+
+}
+center{
+	margin: 100px;
+	margin-top:0px;
+}

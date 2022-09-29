@@ -1,0 +1,45 @@
+
+body{
+	background:white;
+}
+#header{
+	background:white;
+	height: 70px;
+	width:100%;
+}
+#header button{
+	float: right;
+	margin: 20px;
+	margin-top:15px;
+	height: 50px;
+}
+.logo{
+	/*margin-top: 15px;*/
+	font-family: SquishyBlue;
+	color:green;
+}
+#logotext{
+	font-size: 50px;
+	padding-top: 120px;
+	padding-bottom: 20px;
+	color:darkgreen;
+	font-family: SquishyBlue;
+	font-size:120px;
+}
+#main{
+	padding-bottom: 100px;
+	background-image:linear-gradient(#C2F70F7f,#0000,#0000);
+}
+#main button{
+	margin-top:40px;
+}
+#cnt{
+	padding:30px;
+	border:solid;
+	border-width:0.5px;
+	border-radius:2%;
+}
+center p{
+	font-family: AfterDaylight;
+	font-size:50px;
+}
